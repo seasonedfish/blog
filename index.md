@@ -1,15 +1,16 @@
 ## A Different Approach: Cookiecutter
 *2020-06-04*
 
-I didn't make any progress with Zappa in the last few days, so today I tried a different approach. I 
-researched [Cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/README.html), a CLI utility that creates projects from templates. I found 
+I didn't make any progress with Zappa in the last few days, so today I tried a different approach. I researched 
+[Cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/README.html), a CLI utility that creates projects from 
+templates. I found 
 [this flask-ask template](https://github.com/chrisvoncsefalvay/cookiecutter-flask-ask)
 for Cookiecutter that should be helpful.
 
-I switched to PyCharm on Windows and set up the project structure with the template. However, I ran 
-into a problem installing certain dependencies. Installing cffi raises `IndexError: list index out of 
-range`. Installing cryptography also failed. I saw that newer versions were already installed, so I 
-changed the condition in `requirements.txt` from `==` to `>=`. This seemed to fix the issues.
+I switched to PyCharm on Windows and set up the project structure with the template. However, I ran into a problem 
+installing certain dependencies. Installing cffi raises `IndexError: list index out of range`. Installing cryptography 
+also failed. I saw that newer versions were already installed, so I changed the condition in `requirements.txt` from 
+`==` to `>=`. This seemed to fix the issues.
 
 I researched Python virtual environments. Here are articles and discussions that I read:
 - [Pipenv & Virtual Environments](https://docs.python-guide.org/dev/virtualenvs/)
@@ -17,9 +18,10 @@ I researched Python virtual environments. Here are articles and discussions that
 - [Should I use pipenv or virtualenv?](https://www.reddit.com/r/learnpython/comments/9lrcee/should_i_use_pipenv_or_virtualenv/)
 - [Pipenv vs virtualenv vs conda environment](https://medium.com/@krishnaregmi/pipenv-vs-virtualenv-vs-conda-environment-3dde3f6869ed)
 
-From my reading, it seems that there is no clear consensus on the recommended Python virtual 
-environment currently. `venv` is part of the Python standard library, but it has less features than
-the other options. `pipenv` is a higher level, third party tool. However, it's not as reliable. `virtualenv`is also a third party tool, but it's lower level than `pipenv`. I chose `virtualenv` because it's recommmended for beginners.
+From my reading, it seems that there is no clear consensus on the recommended Python virtual environment currently. 
+`venv` is part of the Python standard library, but it has less features than the other options. `pipenv` is a higher 
+level, third party tool. However, it's not as reliable. `virtualenv`is also a third party tool, but it's lower level 
+than `pipenv`. I chose `virtualenv` because it's recommmended for beginners.
 
 ## Zappa Setup and Confusion
 *2020-05-30*
@@ -50,6 +52,3 @@ use Python 3.x. However, I really don't want to use 2.7 because it's not support
 I found the solution in 
 [this Stack Overflow question](https://stackoverflow.com/questions/51273969/virtutalenv-command-python-setup-py-egg-info-failed-with-error-code-1).
 Downgrading pip to 9.x with `pip install --upgrade "pip<10"` fixed my issue. 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM0MTcwNzg1XX0=
--->
