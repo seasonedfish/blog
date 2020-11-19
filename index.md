@@ -50,3 +50,6 @@ use Python 3.x. However, I really don't want to use 2.7 because it's not support
 I found the solution in 
 [this Stack Overflow question](https://stackoverflow.com/questions/51273969/virtutalenv-command-python-setup-py-egg-info-failed-with-error-code-1).
 Downgrading pip to 9.x with `pip install --upgrade "pip<10"` fixed my issue. 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTM0MTcwNzg1XX0=
+-->
