@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+## First Steps Again
+*2020-05-29*
 
-You can use the [editor on GitHub](https://github.com/tactlessfish/tactlessfish.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+Today, I started following the Flask-Ask + Zappa guide. I'm using Ubuntu 18 on Windows Subsystem for 
+Linux (WSL) to hopefully ease development.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I had an issue where I couldn't install virtualenv with pip. This was fixed by passing the 
+`--user`argument. With this fixed, I created my virtual environment to install my dependencies, but I ran into another error: I couldn't install flask-ask. I received `ModuleNotFoundError: No module named 
+'pip.req'`. Looking this up, I found this related issue:
+[Flask-ask using Python 3.7 image](https://github.com/tiangolo/uwsgi-nginx-flask-docker/issues/133). 
+I realized that the guide is written for Python 2.7; I could run into more issues later if I continue to use Python 3.x. However, I really don't want to use 2.7 because it's not supported anymore.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tactlessfish/tactlessfish.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+I found the solution in 
+[this Stack Overflow question](https://stackoverflow.com/questions/51273969/virtutalenv-command-python-setup-py-egg-info-failed-with-error-code-1).
+Downgrading pip to 9.x with `pip install --upgrade "pip<10"`fixed my issue. 
