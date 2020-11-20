@@ -80,4 +80,25 @@ use Python 3.x. However, I really don't want to use 2.7 because it's not support
 
 I found the solution in 
 [this Stack Overflow question](https://stackoverflow.com/questions/51273969/virtutalenv-command-python-setup-py-egg-info-failed-with-error-code-1).
-Downgrading pip to 9.x with `pip install --upgrade "pip<10"` fixed my issue. 
+Downgrading pip to 9.x with `pip install --upgrade "pip<10"` fixed my issue.
+
+## A New Hope
+*2020-05-28*
+
+Trying to figure out serverless has been fruitless in the last few weeks. I've asked Mr. Navkal and fellow Energize 
+Andover members about my issue, but we haven't found any success.
+
+Today, I researched some alternatives for deploying code. [Zappa](https://github.com/Miserlou/Zappa) is a python 
+specific tool for building and deploying event-drive software on AWS Lambda. However, it's less popular than 
+serverless. 
+[Flask-Ask](https://flask-ask.readthedocs.io/en/latest/index.html) is a framework that makes it easier to develop 
+Skills with Python. I found 
+[this guide](https://developer.amazon.com/blogs/post/Tx14R0IYYGH3SKT/Flask-Ask-A-New-Python-Framework-for-Rapid-Alexa-Skills-Kit-Development) 
+for getting started with it. Also, I found 
+[this guide](https://developer.amazon.com/blogs/alexa/post/8e8ad73a-99e9-4c0f-a7b3-60f92287b0bf/new-alexa-tutorial-deploy-flask-ask-skills-to-aws-lambda-with-zappa) 
+for using it in conjunction with Zappa.
+
+I decided on using the Flask-Ask + Zappa guide for this project. It should spare me some headache, hopefully.
+
+## Legacy Blog
+Posts prior to May 2020 can be found on my old site, [energize-fs.weebly.com](https://energize-fs.weebly.com/).
