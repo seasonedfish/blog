@@ -15,8 +15,11 @@ Python. Looking this up, I found
 I followed both answers, adding Python to PATH on re-installation and removing aliases, but they still didn't work.
 
 I felt that it wasn't worth this headache to continue using Windows. I switched to my Chromebook (that I had installed 
-GalliumOS on) to get both library compatibility and PyCharm. During setup, I had an issue installing cryptography, 
-but I was successful after just [installing a few dependencies](https://stackoverflow.com/a/22210069).
+GalliumOS on) to get both library compatibility and PyCharm. I had not previously used it for development because its 
+CPU and RAM were weaker than my Windows laptop, but I'm getting desperate. I just want things to work.
+
+During setup, I had an issue installing cryptography, but I was successful after just 
+[installing a few dependencies](https://stackoverflow.com/a/22210069).
 
 ## Getting Started with Ngrok
 *2020-06-05*
@@ -42,7 +45,7 @@ ran into a problem installing certain dependencies. Installing cffi raises `Inde
 Installing cryptography also failed. I saw that newer versions were already installed, so I changed the condition in 
 `requirements.txt` from `==` to `>=`. This seemed to fix the issues.
 
-I researched Python virtual environments. Here are articles and discussions that I read:
+I also researched Python virtual environments. Here are articles and discussions that I read:
 - [Pipenv & Virtual Environments](https://docs.python-guide.org/dev/virtualenvs/)
 - [What is the difference between venv, pyvenv, pyenv, virtualenv, virtualenvwrapper, pipenv, etc?](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe)
 - [Should I use pipenv or virtualenv?](https://www.reddit.com/r/learnpython/comments/9lrcee/should_i_use_pipenv_or_virtualenv/)
@@ -61,8 +64,8 @@ credentials locally, deployed the Skill with Zappa, and configured the skill in 
 console.
 
 Testing the skill showed an error though, `There was a problem with the requested skill's response`. 
-I replaced my Python code with a simple one-line response in case it's version incompatibility, but 
-it still didn't work. This is really strange because I followed the guide pretty well; the only 
+I replaced my Python code with a simple one-line response in case the problem is version incompatibility, but 
+I still received the same error. This is really strange because I followed the guide pretty well; the only 
 exception is that I'm using Python 3 (flask-ask and Zappa currently support it).
 
 ## First Steps Again
