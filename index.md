@@ -1,4 +1,4 @@
-## Windows Makes Me Sad
+## Working on Windows Makes Me Sad
 *2020-06-06*
 
 Troubleshooting yesterday's error, I found 
@@ -10,12 +10,13 @@ recommended to downgrade cryptography < 2.2.
 However, downgrading cryptography < 2.2 resulted in an error, `Failed building wheel for cryptography`. I couldn't
 find anything helpful for this, so I suspected that it was due to using Python 3. I then tried switching to Python 2.
 I installed Python 2, but somehow `pip` and `python` commands didn't work. They just opened the Windows Store page for 
-Python. I found [this relevant Stack Overflow question]. I followed both answers, adding Python to PATH on 
-re-installation and removing aliases, but they still didn't work.
+Python. Looking this up, I found 
+[a relevant Stack Overflow question](https://stackoverflow.com/questions/58754860/cmd-opens-window-store-when-i-type-python). 
+I followed both answers, adding Python to PATH on re-installation and removing aliases, but they still didn't work.
 
-I felt that it wasn't worth this headache to continue using Windows. I switched to my Chromebook that I had installed 
-GalliumOS on to get both library compatibility and PyCharm. At first, I had an issue installing cryptography, but I 
-was successful after just [installing a few dependencies](https://stackoverflow.com/a/22210069).
+I felt that it wasn't worth this headache to continue using Windows. I switched to my Chromebook (that I had installed 
+GalliumOS on) to get both library compatibility and PyCharm. During setup, I had an issue installing cryptography, 
+but I was successful after just [installing a few dependencies](https://stackoverflow.com/a/22210069).
 
 ## Getting Started with Ngrok
 *2020-06-05*
