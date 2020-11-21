@@ -7,7 +7,7 @@ categories: energize
 
 Since moving to Python 3 meant setting up my project again, I thought that I 
 might as well give Windows a try again. Little did I know the horrors I would 
-face...
+face!
 
 The first problem, although frustrating, was not Windows' fault. Trying to 
 install Flask-ask in my Python 3.8 virtual environment gave me an error:
@@ -18,7 +18,7 @@ It turns out, this issue was on Flask-Ask's side, and it was fixed two years
 ago. However, the patch was never released to PyPi. To resolve it, I needed 
 to install Flask-Ask from Github.
 
-Then, I recieved the message, `error: Microsoft Visual C++ 14.0 is required. 
+Then, I received the message, `error: Microsoft Visual C++ 14.0 is required. 
 Get it with "Build Tools for Visual Studio"`. I found the Build Tools 
 [here](https://visualstudio.microsoft.com/downloads/#), under All Downloads: 
 Tools for Visual Studio 2019. This was a 4GB download! I was quite baffled
@@ -31,9 +31,9 @@ file: 'openssl/opensslv.h': No such file or directory'`. Reading
 I found that I needed to set the LIB and INCLUDE environment variables.
 Setting these fixed this issue.
 
-Finally, I received hundreds of lines of `_openssl.obj : error LNK2001: 
-unresolved external symbol`. I searched for some time, but the only relevant 
-thing I found was this unanswered
+Finally, I received hundreds of error messages that repeated `_openssl.obj : 
+error LNK2001: unresolved external symbol` with slight variations. I searched 
+for some time, but the only relevant thing I found was this unanswered
 [Stack Overflow question](https://stackoverflow.com/questions/30159358/pip-install-cryptography-error-failed-with-exit-status-1120).
 The original poster solved the problem by downgrading their Python to 3.4. 
 This isn't something I'm interested in trying because 3.4 is not supported 
