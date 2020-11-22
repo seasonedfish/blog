@@ -9,9 +9,10 @@ Troubleshooting yesterday's error, I found
 [this Github issue](https://github.com/3SpheresRoboticsProject/flask_ask_ros/issues/3). On it, a contributor 
 recommended to test the connection by running ngrok without a service. I tried this, and ngrok reported a connection 
 successfully established. The contributor and this [Stack Overflow answer](https://stackoverflow.com/a/49466811) then 
-recommended to downgrade cryptography < 2.2.
+recommended to downgrade cryptography \< 2.2.
 
-However, downgrading cryptography < 2.2 resulted in an error, `Failed building wheel for cryptography`. I couldn't
+However, downgrading cryptography \< 2.2 resulted in an error, `Failed
+ building wheel for cryptography`. I couldn't
 find anything helpful for this, so I suspected that it was due to using Python 3. I then tried switching to Python 2.
 I installed Python 2, but somehow `pip` and `python` commands didn't work. They just opened the Windows Store page for 
 Python. Looking this up, I found 
