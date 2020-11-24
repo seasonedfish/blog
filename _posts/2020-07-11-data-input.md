@@ -84,3 +84,5 @@ Now we're talking. My plan now to transform the data is:
 2. Create a list of lists for rows.
 3. Iterate through the year ranges to fill in the sublists.
 4. Create a new `DataFrame` from the list of lists.
+
+I will implement these steps tomorrow.
