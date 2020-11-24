@@ -26,5 +26,6 @@ Here is some background information that I learned:
 I was assigned to work on the pre-processing software; my program would use
 Pandas to manipulate the Electronic Health Record (EHR) data into a NLP
 system-usable format. I'm eager to contribute to a project that can potentially
-help improve the treatment of stroke victims, and I'm happy to have the chance
-to learn more about Pandas--it would benefit my work with Energize Andover.
+help improve the treatment of stroke victims, and I'm grateful for the chance
+to improve my work with Energize Andover using the new Pandas knowledge that I
+learn.
