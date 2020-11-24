@@ -23,4 +23,3 @@ Looking up the error message, I found
 that had my exact problem.
 Following its advice, I built PyCharm with a bundled JRE from the AUR,
 and it worked.
-
