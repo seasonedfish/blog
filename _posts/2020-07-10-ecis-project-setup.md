@@ -7,7 +7,7 @@ categories: ecis
 
 I had chosen to use `virtualenv` for my last Python project
 because all the guides that I had found for Alexa development used it.
-Since that I feel more comfortable working with virtual environments now,
+Since I feel more comfortable working with virtual environments now,
 I felt that this was a good chance to explore a new tool that I had head about.
 Called [Poetry](https://python-poetry.org/),
 it offered an intuitive CLI for managing project dependencies, building,
