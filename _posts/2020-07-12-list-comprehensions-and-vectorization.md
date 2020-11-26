@@ -34,7 +34,7 @@ This leads to great improvements in performance for large datasets.
 Here is the post's benchmark of different methods that add two columns together.
 As you can see, the vectorized implementation `vec` really outperforms
 the other implementations at a large number of elements `N`.
-<img src="../assets/img/benchmark.png" alt="Benchmark" class="centered-image">
+<img src="/assets/img/benchmark.png" alt="Benchmark" class="centered-image">
 
 I feel enlightened with this new understanding of Pandas.
 I hope to gain some experience working with vectorized functions
