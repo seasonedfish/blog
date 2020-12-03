@@ -2,7 +2,7 @@
 layout: default
 title:  "List Comprehensions and Vectorization"
 date:   2020-07-12
-categories: energize
+categories: ecis
 ---
 
 Today, I applied my plan from yesterday.
