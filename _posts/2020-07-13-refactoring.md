@@ -29,7 +29,10 @@ This sounded smart, but what is a Cartesian product?
 It turned out to just be the set of all pairs whose first element is from the first
 set and second element is from the second set.
 For example, here is the Cartesian product of {x,y,z}×{1,2,3}.
-![](/assets/img/cartesian.png)
+
+<a title="Quartl, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Cartesian_Product_qtl1.svg">
+<img width="512" alt="Cartesian Product qtl1" src="/assets/img/cartesian.png" class="centered-image">
+</a>
 
 If I replaced my nested loop using `itertools.product()`, it would look like this:
 ```python
