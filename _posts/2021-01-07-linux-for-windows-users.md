@@ -23,12 +23,13 @@ I then remembered that my trial AWS EC2 server is still running,
 and Windows has the OpenSSH Client installed by default.
 I created an "energize" user on the server,
 and I modified the server's configuration to allow password login for that user[^1].
+Students could now access a Linux environment by simply running a command in Command Prompt—
+no installation required.
 
-This was quite convenient.
-Students could access a Linux environment without needing to install anything.
-There were also some added bonuses.
+This was quite convenient,
+and there were also some added bonuses.
 They would have quick access to any dev tools I install
-becuase they wouldn't need to also go through the installation processes themselves.
+because they wouldn't need to also go through the installation processes themselves.
 And, any issues that come up should be easier to investigate
 because I can access the exact files or software in which they occur.
 
