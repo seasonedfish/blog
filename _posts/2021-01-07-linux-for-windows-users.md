@@ -22,16 +22,17 @@ for students who were unsure about joining.
 I then remembered that my trial AWS EC2 server is still running,
 and Windows has the OpenSSH Client installed by default.
 I created an "energize" user on the server,
-and I modified the server's configuration to allow password login for that user.
-(I realize that passwords are much less secure than keys,
-but I don't understand keys well enough right now to explain to the new students
-what they do and how to log in with one.
-I'll learn more about SSH keys in the future;
-for now, I'm using a strong password.)
+and I modified the server's configuration to allow password login for that user[^1].
 
 This was quite convenient.
 Students could access a Linux environment without needing to install anything.
-However, on the first meeting that we tried using it,
+There were also some added bonuses.
+They would have quick access to any dev tools I install
+becuase they wouldn't need to also go through the installation processes themselves.
+And, any issues that come up should be easier to investigate
+because I can access the exact files or software in which they occur.
+
+However, on the first meeting that we tried using the server,
 we came across two big problems.
 First, everything was very slow.
 Resolving the dependencies of a Python project using Poetry,
@@ -39,12 +40,14 @@ a process that took under 30 seconds locally,
 took over 8 minutes on the server.
 Even connecting to the server and sending commands seemed slow.
 Second, installing pandas didn't even work.
-The server had Python 3.6.9 running, which was supposed to be supported.
+The server had Python 3.6.9 running;
+this was supposed to be supported.
 But, trying to install pandas in a virtual environment failed due to version incompatibilities.
 
 To solve the first problem, I viewed the server's running processes.
 I found that I had left some services running from when I was trying out EC2 for the first time,
-so I stopped them and uninstalled them. This made the server much faster.
+so I stopped them and uninstalled them.
+This made the server much faster.
 
 To fix the second problem, I tried installing [pyenv](https://github.com/pyenv/pyenv).
 This is a tool that Dan recommended me;
@@ -74,3 +77,5 @@ pyenv shell --unset
 
 With the performance and compatibility problems taken care of,
 the server is ready for our new members to try pandas!
+
+[^1]: I realize that passwords are much less secure than keys, but I don't understand keys well enough right now to explain how they work or how to add one to a server. For now, I've made the password strong, but I'll definitely learn more about SSH keys in the future.
