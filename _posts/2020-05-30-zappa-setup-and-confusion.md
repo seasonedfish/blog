@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Zappa Setup and Confusion"
 date:   2020-05-30
 categories: energize

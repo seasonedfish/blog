@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: A Noble Cause
 date: '2020-07-10'
 categories: ecis

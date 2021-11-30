@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "$HOME Sweet $HOME"
 date:   2020-06-27
 categories: energize

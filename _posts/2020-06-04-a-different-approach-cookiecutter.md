@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "A Different Approach: Cookiecutter"
 date:   2020-06-04
 categories: energize

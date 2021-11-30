@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Success, Finally"
 date:   2020-06-23
 categories: energize

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Legacy Blog"
 date:   2020-05-01
 categories: energize

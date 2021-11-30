@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "First Steps Again"
 date:   2020-05-29
 categories: energize
