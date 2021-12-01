@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: single
 title:  "Getting Started with Ngrok"
 date:   2020-06-05
 categories: energize

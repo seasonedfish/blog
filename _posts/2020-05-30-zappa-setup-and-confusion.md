@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: single
 title:  "Zappa Setup and Confusion"
 date:   2020-05-30
 categories: energize

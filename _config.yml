@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you:
+# If you need help with YAML syntax, here are some quick references for you: 
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -18,27 +18,32 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Fisher's Energize Andover Blog
+title: Fisher's Blog
+name: &name "Fisher Sun"
 email: fisher521.fs@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tactlessfish.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  tactlessfish
-github:
-  is_project_page: false
+
+# minimal mistakes config
+author:
+  name: *name
+  bio: Avid CS student, open source enthusiast
+  location: St. Louis, MO
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/tactlessfish"
 
 # Build settings
-theme: jekyll-theme-cayman
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
-
-# Front matter
-defaults:
-  - scope:
-      path: "assets/img"
-    values:
-      image: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
