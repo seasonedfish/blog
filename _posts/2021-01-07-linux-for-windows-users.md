@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Linux for Windows Users"
 date:   2021-01-07
 categories: energize

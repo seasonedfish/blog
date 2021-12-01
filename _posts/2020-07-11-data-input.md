@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Data Input"
 date:   2020-07-11
 categories: ecis

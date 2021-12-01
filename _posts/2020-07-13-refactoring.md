@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Refactoring"
 date:   2020-07-13
 categories: ecis

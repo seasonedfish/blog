@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Working on Windows Makes Me Sad"
 date:   2020-06-06
 categories: energize
