@@ -30,7 +30,7 @@ url: "https://tactlessfish.github.io/" # the base hostname & protocol for your s
 github_username:  tactlessfish
 
 # Build settings
-theme: jekyll-theme-yat
+theme: beautiful-jekyll-theme
 plugins:
   - jekyll-feed
 
