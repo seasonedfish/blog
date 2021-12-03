@@ -1,7 +1,14 @@
 ---
 layout: page
-title: About this Blog
+title: About
 permalink: /about
 ---
 
-Here, I plan to document projects I build, problems I encounter, and things I learn.
+## About the Author
+Hey, I'm Fisher!
+I'm a CS student at Washington University in St. Louis.
+
+## About this Blog
+In this blog,
+I plan to document projects I work on, issues I encounter, and things I learn.
+
