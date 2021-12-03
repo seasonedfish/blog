@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "ECIS Project Setup"
 date:   2020-07-10
 categories: ecis

@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title:  "Towards Python 3 and More Windows Issues"
 date:   2020-06-26
 categories: energize
