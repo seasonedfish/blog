@@ -1,9 +1,11 @@
 ---
 ---
 
-$sans-serif-font-family: "Public Sans", sans-serif;
-$serif-font-family:      "Public Sans", sans-serif;
-$code-font-family:       "Source Code Pro", monospace;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$sans-serif-font-family: "Roboto", sans-serif;
+$serif-font-family:      "Roboto", sans-serif;
+$code-font-family:       "Roboto Mono", monospace;
 
 $body-color:             #505050;
 $link-color-no-hover: #2f7d95;
