@@ -1,16 +1,17 @@
 ---
 ---
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-$sans-serif-font-family: "Roboto", sans-serif;
-$serif-font-family:      "Roboto", sans-serif;
-$code-font-family:       "Roboto Mono", monospace;
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+$sans-serif-font-family: "Public Sans", sans-serif;
+$serif-font-family:      "Source Serif Pro", serif;
+$code-font-family:       "Source Code Mono", monospace;
 
 $body-color:          #505050;
-$link-color-no-hover: #2f7d95;
+$link-color-no-hover: #74907A;
 $link-color:          adjust-color($link-color-no-hover, $lightness: -10%);
-$highlight-color:     adjust-color($link-color-no-hover, $lightness: +50%);
+$highlight-color:     adjust-color($link-color-no-hover, $lightness: +40%);
 
 $code-background-color:   #f5f5f5;
 $pagination-button-color: #e0e0e0;
