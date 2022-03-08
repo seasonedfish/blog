@@ -7,9 +7,10 @@ $sans-serif-font-family: "Roboto", sans-serif;
 $serif-font-family:      "Roboto", sans-serif;
 $code-font-family:       "Roboto Mono", monospace;
 
-$body-color:             #505050;
+$body-color:          #505050;
 $link-color-no-hover: #2f7d95;
-$link-color: #266477;
+$link-color:          adjust-color($link-color-no-hover, $lightness: -10%);
+$highlight-color:     adjust-color($link-color-no-hover, $lightness: +50%);
 
 $code-background-color:   #f5f5f5;
 $pagination-button-color: #e0e0e0;

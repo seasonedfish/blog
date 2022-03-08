@@ -9,6 +9,13 @@ body {
   line-height: 1.75rem;
 }
 
+::selection {
+  background: $highlight-color; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $highlight-color; /* Gecko Browsers */
+}
+
 @media (max-width: $elements-responsive-width) {
   body {
     font-size: 14px;
