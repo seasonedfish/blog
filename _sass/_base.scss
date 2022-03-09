@@ -16,16 +16,6 @@ body {
   background: $highlight-color; /* Gecko Browsers */
 }
 
-@media (max-width: $elements-responsive-width) {
-  body {
-    font-size: 16px;
-    line-height: 1.5rem;
-  }
-  body h1 {
-    font-size: 1.5rem;
-  }
-}
-
 h1{
   font-size: 2rem;
 }
