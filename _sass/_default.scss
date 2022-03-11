@@ -84,6 +84,19 @@
 }
 
 /*
+Limit preview to 3 lines
+https://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css
+ */
+.preview {
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+           line-clamp: 3;
+   -webkit-box-orient: vertical;
+}
+
+/*
   Footer
 */
 
