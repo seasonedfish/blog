@@ -97,6 +97,18 @@ https://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-c
 }
 
 /*
+ * Hide elements when printing
+ * https://stackoverflow.com/a/356123/14106506
+ */
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+/*
   Footer
 */
 
