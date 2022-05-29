@@ -160,14 +160,59 @@ thus satisfying the single responsibility principle.
 
 ## Enums
 And now, back to `PokemonType`.
+
 I used to store a Pokémon's types as strings.
-But, I realized it would be better to represent types using an enum, since there is a finite set of possible types.
+But, I realized it would be better to represent types using an enum, since there is a small set of possible types.
 To allow for the absence of a type (Pokémon with a primary type and no secondary type),
 I created a class method, `optional_pokemon_type()`.
 This method returns None if the input string is empty; otherwise, it returns the corresponding `PokemonType`.
 
 With `PokemonType` as an enum, I could use its members as the keys of a dictionary.
 So, I rewrote the code for the grid of type defenses so that it used `PokemonType`.
-I made a `TypeDefensesDict` class; it's similar to `PokemonDict`, so I'll omit the code here.
+I made a `TypeDefensesDict` class; although similar to `PokemonDict`, it caused me a fair amount of pain to write.
+Here is its `_read_dataset_to_dict()` method:
+```python
+@staticmethod
+def _read_dataset_to_dict() -> Dict[PokemonType, TypeDefenses]:
+    """
+    Parse the grid of type defenses.
+    """
+    with resources.open_text(data, "type_defenses_modified.csv") as f:
+        # The QUOTE_NONNUMERIC part allows us to read numbers directly as floats.
+        data_iterator = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
+        # Gets the column names as a list of PokemonType members.
+        attacking_types = list(
+            map(PokemonType, data_iterator.__next__()[1:])
+        )
+
+        all_type_defenses: Dict[PokemonType, TypeDefenses] = {
+            PokemonType(row[0]): dict(
+                zip(attacking_types, cast(List[float], row[1:]))
+            )
+            for row in data_iterator
+        }
+    return all_type_defenses
+```
+I found that you could read numbers directly as floats using `quoting=csv.QUOTE_NONNUMERIC`,
+but the problem was, Python couldn't know that each `row` contained all floats besides the first element.
+mypy kept giving me errors, thinking that the elements of each `row` were all supposed to be strings.
+I came up with some ideas to resolve this,
+but they didn't work,
+so I ended up using the `cast` function from `typing` to make mypy happy.
+
+## Addendum: Why not use namedtuples?
+I experimented with using namedtuples to store Pokémon data instead of Data Classes.
+From a purely practical standpoint, namedtuples are better--they are slightly faster,
+reducing the time to print two summaries by around 10ms.
+They also use less memory; when I left `pokesummary -i` open,
+the version with Data Classes used 11MB of memory,
+while the version with namedtuples used 10MB of memory.
+
+However, using namedtuples makes less sense than using Data Classes from a design standpoint.
+From my understanding, namedtuples should only be used as a replacement for tuples[^2];
+they keep all the functionality of tuples.
+So, namedtuples are iterable, and they can be unpacked.
+This kind of functionality makes no sense for a Pokémon object.
 
 [^1]: Python also generates `__repr__()`, `__eq__()`, and `__hash__()`, but these aren't relevant in Pokésummary.
+[^2]: I gathered this from reading this [thread](https://news.ycombinator.com/item?id=15132670) on Hacker News.
