@@ -87,7 +87,7 @@ Using the `@dataclass` decorator,
 all I needed in the class bodies were the instance variables and their types;
 Python generated the `__init__()` functions for me[^1].
 
-(Don't worry about PokemonType for now; we'll get to that in a bit.)
+(Don't worry about `PokemonType` for now; we'll get to that in a bit.)
 
 Now, with data classes, the available attributes are explicitly defined.
 I can also now use the dot operator,
@@ -157,5 +157,17 @@ pokemon_dict = PokemonDict()
 ```
 The logic of reading Pokémon data is no longer in the controller part of the program,
 thus satisfying the single responsibility principle.
+
+## Enums
+And now, back to `PokemonType`.
+I used to store a Pokémon's types as strings.
+But, I realized it would be better to represent types using an enum, since there is a finite set of possible types.
+To allow for the absence of a type (Pokémon with a primary type and no secondary type),
+I created a class method, `optional_pokemon_type()`.
+This method returns None if the input string is empty; otherwise, it returns the corresponding `PokemonType`.
+
+With `PokemonType` as an enum, I could use its members as the keys of a dictionary.
+So, I rewrote the code for the grid of type defenses so that it used `PokemonType`.
+I made a `TypeDefensesDict` class; it's similar to `PokemonDict`, so I'll omit the code here.
 
 [^1]: Python also generates `__repr__()`, `__eq__()`, and `__hash__()`, but these aren't relevant in Pokésummary.
