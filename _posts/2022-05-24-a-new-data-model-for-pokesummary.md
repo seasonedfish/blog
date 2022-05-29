@@ -159,7 +159,7 @@ There was one thing in particular that was bothering me:
 I had stored Pokémon types as strings, but it would be better to represent them using enum members
 since there's a small set of Pokémon types.
 Enums are great in cases like these because they clearly document the possible values
-and prevent errors caused by using invalid values[^2].
+and prevent errors caused by using invalid ones[^2].
 
 I created an enum, `PokemonType`:
 ```python
@@ -181,12 +181,11 @@ primary_type=PokemonType(csv_row["primary_type"]),
 
 But, what about secondary type?
 A Pokémon might not have two types; in that case, `csv_row["secondary_type"]` would be an empty string.
-With enums, I first thought I could have a `NO_TYPE = ""` member of the enum.
+With enums, I initially thought I could have a `NO_TYPE = ""` member of the enum.
 However, it didn't make sense for `NO_TYPE` to show up when you iterated through `PokemonType`.
 
 Looking this up, it seemed like the [consensus](https://stackoverflow.com/a/1795662)
-was that it's better to use a nullable (a variable set to `None` in the absence of a value).
-The Python equivalent of this is `Optional`.
+was that it's better to use a nullable, a variable set to `None` in the absence of a value.
 
 My initial code for this was probably the worst Python I've ever written.
 ```python
@@ -198,7 +197,7 @@ A clear no-go.
 
 I ended up learning about class methods[^3],
 which are commonly used to provided multiple ways to instantiate a class.
-I wrote a class method with same functionality as the above code block:
+I wrote a class method with the same functionality as the above code block:
 ```python
 @classmethod
 def optional_pokemon_type(cls, s: str):
