@@ -59,7 +59,7 @@ I implemented it using Data Classes.
 I made a `Pokemon` class, which contains a `PokemonBaseStats`--here is the code:
 ```python
 @dataclass(frozen=True)
-class PokemonBaseStats:
+class BaseStats:
     hp: int
     attack: int
     defense: int
@@ -75,16 +75,14 @@ class Pokemon:
     height: float
     weight: float
 
-    primary_type: PokemonType
-    secondary_type: Optional[PokemonType]
+    primary_type: str
+    secondary_type: str
 
-    base_stats: PokemonBaseStats
+    base_stats: BaseStats
 ```
 Using the `@dataclass` decorator,
 all I needed in the class bodies were the instance variables and their types;
 Python generated the `__init__()` functions for me[^1].
-
-(Don't worry about `PokemonType` for now; we'll get to that in a bit.)
 
 Now, with data classes, the available attributes are explicitly defined.
 I can also now use the dot operator,
@@ -112,11 +110,11 @@ and I passed the output of this method into the constructor.
 ```python
 class PokemonDict(UserDict):
     def __init__(self):
-        pokemon_dict = self._read_dataset_to_dict()
-        UserDict.__init__(self, pokemon_dict)
+        pokemon_dictionary = self.read_dataset_to_dictionary()
+        UserDict.__init__(self, pokemon_dictionary)
 
     @staticmethod
-    def _read_dataset_to_dict():
+    def read_dataset_to_dictionary():
         with resources.open_text(data, "pokemon_modified.csv") as f:
             csv_iterator = csv.DictReader(f)
 
@@ -126,9 +124,9 @@ class PokemonDict(UserDict):
                     classification=csv_row["classification"],
                     height=float(csv_row["pokemon_height"]),
                     weight=float(csv_row["pokemon_weight"]),
-                    primary_type=PokemonType(csv_row["primary_type"]),
-                    secondary_type=PokemonType.optional_pokemon_type(csv_row["secondary_type"]),
-                    base_stats=PokemonBaseStats(
+                    primary_type=csv_row["primary_type"],
+                    secondary_type=csv_row["secondary_type"],
+                    base_stats=BaseStats(
                         hp=int(csv_row["health_stat"]),
                         attack=int(csv_row["attack_stat"]),
                         defense=int(csv_row["defense_stat"]),
@@ -152,17 +150,66 @@ pokemon_dict = PokemonDict()
 The logic of reading Pokémon data is no longer in the controller part of the program,
 thus satisfying the single responsibility principle.
 
+With both of my problems solved,
+I could finally rest easy--wait no, who am I kidding?
+As always, I wanted to do more.
+
 ## Enums
-And now, back to `PokemonType`.
+There was one thing in particular that was bothering me:
+I had stored Pokémon types as strings, but it would be better to represent them using enum members
+since there's a small set of Pokémon types.
+Enums are great in cases like these because they clearly document the possible values
+and prevent errors caused by using invalid values[^2].
 
-I used to store a Pokémon's types as strings.
-But, I realized it would be better to represent types using an enum, since there is a small set of possible types.
-To allow for the absence of a type (Pokémon with a primary type and no secondary type),
-I created a class method, `optional_pokemon_type()`.
-This method returns None if the input string is empty; otherwise, it returns the corresponding `PokemonType`.
+I created an enum, `PokemonType`:
+```python
+@unique
+class PokemonType(Enum):
+    NORMAL = "Normal"
+    FIRE = "Fire"
+    # ... [rest of the types omitted for brevity]
+```
 
+Now, in the `Pokemon` class, I could write:
+```python
+primary_type: PokemonType
+```
+and in `PokemonDict`:
+```python
+primary_type=PokemonType(csv_row["primary_type"]),
+```
+
+But, what about secondary type?
+A Pokémon might not have two types; in that case, `csv_row["secondary_type"]` would be an empty string.
+With enums, I first thought I could have a `NO_TYPE = ""` member of the enum.
+However, it didn't make sense for `NO_TYPE` to show up when you iterated through `PokemonType`.
+
+Looking this up, it seemed like the [consensus](https://stackoverflow.com/a/1795662)
+was that it's better to use a nullable (a variable set to `None` in the absence of a value).
+The Python equivalent of this is `Optional`.
+
+My initial code for this was probably the worst Python I've ever written.
+```python
+secondary_type=PokemonType(s) if (s := csv_row["secondary_type"]) else None
+```
+Since this was in the dictionary comprehension,
+I needed to use an assignment expression (`:=`), which isn't supported in Python 3.7.
+A clear no-go.
+
+I ended up learning about class methods[^3],
+which are commonly used to provided multiple ways to instantiate a class.
+I wrote a class method with same functionality as the above code block:
+```python
+@classmethod
+def optional_pokemon_type(cls, s: str):
+    if s == "":
+        return None
+    return cls(s)
+```
+
+## The grid of type defenses
 With `PokemonType` as an enum, I could use its members as the keys of a dictionary.
-So, I rewrote the code for the grid of type defenses so that it used `PokemonType`.
+So, I rewrote the code for the grid of type defenses to use `PokemonType`.
 I made a `TypeDefensesDict` class; although similar to `PokemonDict`, it caused me a fair amount of pain to write.
 Here is its `_read_dataset_to_dict()` method:
 ```python
@@ -203,10 +250,12 @@ the version with Data Classes used 11MB of memory,
 while the version with namedtuples used 10MB of memory.
 
 However, using namedtuples makes less sense than using Data Classes from a design standpoint.
-From my understanding, namedtuples should only be used as a replacement for tuples[^2];
+From my understanding, namedtuples should only be used as a replacement for tuples[^4];
 they keep all the functionality of tuples.
 So, namedtuples are iterable, and they can be unpacked.
 This kind of functionality doesn't make sense for Pokémon objects.
 
 [^1]: Python also generates `__repr__()`, `__eq__()`, and `__hash__()`, but these aren't relevant in Pokésummary.
-[^2]: I gathered this from reading this [thread](https://news.ycombinator.com/item?id=15132670) on Hacker News.
+[^2]: See [here](https://stackoverflow.com/a/4709224) for a general explanation of enums, and [here](https://stackoverflow.com/a/37601645) for a Python-specific one.
+[^3]: See [this article](https://realpython.com/python-multiple-constructors/#providing-multiple-constructors-with-classmethod-in-python) for a more thorough explanation of class methods.
+[^4]: I gathered this from reading this [thread](https://news.ycombinator.com/item?id=15132670) on Hacker News.
