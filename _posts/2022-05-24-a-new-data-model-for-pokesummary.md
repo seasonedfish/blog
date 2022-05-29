@@ -40,7 +40,7 @@ Surely there was a better way.
 
 ## The model-view-controller design pattern
 I remembered someone had once told me about the model-view-controller design pattern.
-The idea was to separate your program into three components:
+The idea is to separate your program into three components:
 the model manages the program's data,
 the view displays the data,
 and the controller responds to user input.
@@ -50,7 +50,7 @@ I had the view already, `displaying.py`.
 I also had the controller, `__main__.py`.
 I just needed a model for Pokémon stats.
 Creating this model would explicitly define which attributes were available,
-and writing a new module to read the data into it
+and separating out the logic that read data into it from the controller
 would satisfy the single responsibility principle.
 
 ## Data Classes
