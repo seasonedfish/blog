@@ -30,12 +30,9 @@ and the inner dictionaries (the stats) mapped specific attributes (e.g. "attack_
 The problem was that my code didn't explicitly define which attributes the stats should have.
 The attributes were given by my *dataset*,
 so my code in `displaying.py` had to know the column names of my dataset to access attributes.
-For example, here is how I printed the name of a Pokémon and its classification:
+For example, here is how I accessed a Pokémon's classification:
 ```python
-print(
-    f"{Color.BOLD}{Color.UNDERLINE}{pokemon_name.upper()}, "
-    f"{pokemon_stats['classification'].upper()}{Color.END}"
-)
+pokemon_stats['classification']
 ```
 Since the column name for Pokémon classifications in the dataset is
 "classification", I had to use that string as my dictionary key.
@@ -91,12 +88,9 @@ Python generated the `__init__()` functions for me[^1].
 
 Now, with data classes, the available attributes are explicitly defined.
 I can also now use the dot operator,
-which is much cleaner than using a key lookup.
+which is much cleaner than using a key lookup:
 ```python
-print(
-    f"{Color.BOLD}{Color.UNDERLINE}{pokemon.name.upper()}, "
-    f"{pokemon.classification.upper()}{Color.END}"
-)
+pokemon.classification
 ```
 
 ## Inheriting from UserDict
