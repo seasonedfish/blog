@@ -98,8 +98,8 @@ Next, I needed a way to read my dataset into a collection of `Pokemon` objects.
 I thought it'd be nice to create my own class that mapped strings to `Pokemon`;
 the class could encapsulate reading from my dataset.
 Maybe inherit from `dict`?
-But, reading an article on this,
-I saw that inheriting from `dict` had some [unexpected behavior](https://treyhunner.com/2019/04/why-you-shouldnt-inherit-from-list-and-dict-in-python/).
+But, reading an [article](https://treyhunner.com/2019/04/why-you-shouldnt-inherit-from-list-and-dict-in-python/) on this,
+I saw that inheriting from `dict` had some unexpected behavior.
 So, I followed the article's advice and inherited from `UserDict` instead.
 
 `UserDict` is a wrapper around a dictionary object,
