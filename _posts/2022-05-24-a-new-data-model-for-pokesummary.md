@@ -196,7 +196,7 @@ I needed to use an assignment expression (`:=`), which isn't supported in Python
 A clear no-go.
 
 I ended up learning about class methods[^3],
-which are commonly used to provided multiple ways to instantiate a class.
+which are commonly used to provide multiple ways to instantiate a class.
 I wrote a class method with the same functionality as the above code block:
 ```python
 @classmethod
