@@ -209,7 +209,10 @@ def optional_pokemon_type(cls, s: str):
 ## The grid of type defenses
 With `PokemonType` as an enum, I could use its members as the keys of a dictionary.
 So, I rewrote the code for the grid of type defenses to use `PokemonType`.
-I made a `TypeDefensesDict` class; although similar to `PokemonDict`, it caused me a fair amount of pain to write.
+
+First, I defined `TypeDefenses` as an alias for `Dict[PokemonType, float]`.
+
+Then, I wrote the `TypeDefensesDict` class; although similar to `PokemonDict`, it caused me a fair amount of pain to write.
 Here is its `_read_dataset_to_dict()` method:
 ```python
 @staticmethod
