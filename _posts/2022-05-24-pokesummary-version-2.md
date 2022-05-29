@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Pokésummary Version 2"
+title:  "A New Data Model for Pokésummary"
 date:   2022-05-24
 ---
 
@@ -30,6 +30,15 @@ and the inner dictionaries (the stats) mapped specific attributes (e.g. "attack_
 The problem was that my code didn't explicitly define which attributes the stats should have.
 The attributes were given by my *dataset*,
 so my code in `displaying.py` had to know the column names of my dataset to access attributes.
+For example, here is how I printed the name of a Pokémon and its classification:
+```python
+print(
+    f"{Color.BOLD}{Color.UNDERLINE}{pokemon_name.upper()}, "
+    f"{pokemon_stats['classification'].upper()}{Color.END}"
+)
+```
+Since the column name for Pokémon classifications in the dataset is
+"classification", I had to use that string as my dictionary key.
 Surely there was a better way.
 
 ## The model-view-controller design pattern
@@ -43,12 +52,13 @@ It seemed like this could work well for Pokésummary.
 I had the view already, `displaying.py`.
 I also had the controller, `__main__.py`.
 I just needed a model for Pokémon stats.
-Creating this model would satisfy the single responsibility principle
-and explicitly define which attributes were available.
+Creating this model would explicitly define which attributes were available,
+and writing a new module to read the data into it
+would satisfy the single responsibility principle.
 
 ## Data Classes
 Since my Pokémon stats model would store data,
-I implemented it using frozen Data Classes.
+I implemented it using Data Classes.
 I made a `Pokemon` class, which contains a `PokemonBaseStats`--here is the code:
 ```python
 @dataclass(frozen=True)
@@ -76,15 +86,21 @@ class Pokemon:
 Using the `@dataclass` decorator,
 all I needed in the class bodies were the instance variables and their types;
 Python generated the `__init__()` functions for me[^1].
-Additionally, I used `frozen=true` to make the objects immutable.
 
 (Don't worry about PokemonType for now; we'll get to that in a bit.)
 
-Data Classes solved my second problem of not having an explicitly defined data model.
-Now, in `displaying.py`, I could work with `Pokemon` objects.
+Now, with data classes, the available attributes are explicitly defined.
+I can also now use the dot operator,
+which is much cleaner than using a key lookup.
+```python
+print(
+    f"{Color.BOLD}{Color.UNDERLINE}{pokemon.name.upper()}, "
+    f"{pokemon.classification.upper()}{Color.END}"
+)
+```
 
 ## Inheriting from UserDict
-Now, I needed a way to read my dataset into a collection of `Pokemon` objects.
+Next, I needed a way to read my dataset into a collection of `Pokemon` objects.
 I thought it'd be nice to create my own class that mapped strings to `Pokemon`;
 the class could encapsulate reading from my dataset.
 Maybe inherit from `dict`?
@@ -98,7 +114,7 @@ but it is implemented such that values can be accessed just like a dictionary.
 The `UserDict` constructor allowed me to give the internal dictionary some initial data.
 So, to implement `PokemonDict`,
 I created a static method to read my dataset into a dictionary,
-and passed the output of this method into the constructor.
+and I passed the output of this method into the constructor.
 ```python
 class PokemonDict(UserDict):
     def __init__(self):
@@ -135,6 +151,11 @@ Although this dictionary comprehension isn't too pretty,
 it's much more explicit than before.
 Each attribute of the `Pokemon` class is mapped to a value from the current row.
 
-And now, I could replace the complicated `csv_to_nested_dict` call with one line:
+And with this, I was able to replace the complicated `csv_to_nested_dict` call with one line:
+```python
+pokemon_dict = PokemonDict()
+```
+The logic of reading Pokémon data is no longer in the controller part of the program,
+thus satisfying the single resposnibility principle.
 
 [^1]: Python also generates `__repr__()`, `__eq__()`, and `__hash__()`, but these aren't relevant in Pokésummary.
