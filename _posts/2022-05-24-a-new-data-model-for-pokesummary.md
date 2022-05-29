@@ -206,7 +206,7 @@ However, using namedtuples makes less sense than using Data Classes from a desig
 From my understanding, namedtuples should only be used as a replacement for tuples[^2];
 they keep all the functionality of tuples.
 So, namedtuples are iterable, and they can be unpacked.
-This kind of functionality makes no sense for a Pokémon object.
+This kind of functionality doesn't make sense for Pokémon objects.
 
 [^1]: Python also generates `__repr__()`, `__eq__()`, and `__hash__()`, but these aren't relevant in Pokésummary.
 [^2]: I gathered this from reading this [thread](https://news.ycombinator.com/item?id=15132670) on Hacker News.
