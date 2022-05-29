@@ -156,6 +156,6 @@ And with this, I was able to replace the complicated `csv_to_nested_dict` call w
 pokemon_dict = PokemonDict()
 ```
 The logic of reading Pokémon data is no longer in the controller part of the program,
-thus satisfying the single resposnibility principle.
+thus satisfying the single responsibility principle.
 
 [^1]: Python also generates `__repr__()`, `__eq__()`, and `__hash__()`, but these aren't relevant in Pokésummary.
