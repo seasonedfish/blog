@@ -80,13 +80,13 @@ class Pokemon:
 
     base_stats: BaseStats
 ```
-Using the `@dataclass` decorator,
+Using `@dataclass` decorators,
 all I needed in the class bodies were the instance variables and their types;
 Python generated the `__init__()` functions for me[^1].
 
 Now, with data classes, the available attributes are explicitly defined.
-I can also now use the dot operator,
-which is much cleaner than using a key lookup:
+I can also now use dot notation,
+which is much cleaner than using key lookup:
 ```python
 pokemon.classification
 ```
