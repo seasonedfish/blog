@@ -56,6 +56,11 @@ would satisfy the single responsibility principle.
 ## Data Classes
 Since my Pokémon stats model would store data,
 I implemented it using Data Classes.
+
+With classes, you'd normally need to write an `__init__()` method (the constructor).
+Data Classes make things simpler by automatically generating it;
+all you need to do is define the class's attributes and their types[^1].
+
 I made a `Pokemon` class, which contains a `PokemonBaseStats`--here is the code:
 ```python
 @dataclass(frozen=True)
@@ -80,11 +85,8 @@ class Pokemon:
 
     base_stats: BaseStats
 ```
-Using `@dataclass` decorators,
-all I needed in the class bodies were the instance variables and their types;
-Python generated the `__init__()` functions for me[^1].
 
-Now, with data classes, the available attributes are explicitly defined.
+Now, with Data Classes, the available attributes are explicitly defined.
 I can also now use dot notation,
 which is much cleaner than using key lookup:
 ```python
