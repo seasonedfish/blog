@@ -58,7 +58,7 @@ would satisfy the single responsibility principle.
 Since my Pokémon stats model would store data,
 I implemented it using Data Classes.
 
-With classes, you'd normally need to write an `__init__()` method (the constructor).
+With normal classes, you need to write an `__init__()` method (the constructor).
 Data Classes make things simpler by automatically generating it;
 all you need to do is define the class's attributes and their types[^1].
 
