@@ -248,7 +248,7 @@ def _read_dataset_to_dict() -> Dict[PokemonType, TypeDefenses]:
 ```
 I found that you could read numbers directly as floats using `quoting=csv.QUOTE_NONNUMERIC`,
 but the problem was, Python couldn't know that each `row` contained all floats besides the first element.
-mypy kept giving me errors, thinking that the elements of each `row` were all supposed to be strings.
+Mypy kept giving me errors, thinking that the elements of each `row` were all supposed to be strings.
 I came up with some ideas to resolve this,
 but they didn't work,
 so I ended up using the `cast` function from `typing` to make mypy happy.
