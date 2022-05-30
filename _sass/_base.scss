@@ -99,7 +99,7 @@ Footnotes
  */
 
 // Highlight destination footnote
-li:target {
+.footnotes li:target {
   background-color: #FCF1DD;
   border-radius: 3px;
 }
