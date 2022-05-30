@@ -259,7 +259,7 @@ they keep all the functionality of tuples.
 So, namedtuples are iterable, and they can be unpacked.
 This kind of functionality doesn't make sense for Pokémon objects.
 
-[^1]: Python also generates `__repr__()`, `__eq__()`, and `__hash__()`, but these aren't relevant in Pokésummary.
+[^1]: Data Classes also generate `__repr__()`, `__eq__()`, and `__hash__()`, but these aren't relevant in Pokésummary.
 [^2]: See [here](https://stackoverflow.com/a/4709224) for a general explanation of enums, and [here](https://stackoverflow.com/a/37601645) for a Python-specific one.
 [^3]: See [this article](https://realpython.com/python-multiple-constructors/#providing-multiple-constructors-with-classmethod-in-python) for a more thorough explanation of class methods.
 [^4]: I gathered this from reading this [thread](https://news.ycombinator.com/item?id=15132670) on Hacker News.
