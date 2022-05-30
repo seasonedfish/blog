@@ -184,11 +184,11 @@ primary_type=PokemonType(csv_row["primary_type"]),
 
 But, what about secondary type?
 A Pokémon might not have two types; in that case, `csv_row["secondary_type"]` would be an empty string.
-With enums, I initially thought I could have a `NO_TYPE = ""` member of the enum.
-However, it didn't make sense for `NO_TYPE` to show up when you iterated through `PokemonType`.
+With enums, I initially thought I'd have a `NO_TYPE = ""` member.
+However, it didn't make sense for `NO_TYPE` to show up when you iterated through the enum members.
 
 Looking this up, it seemed like the [consensus](https://stackoverflow.com/a/1795662)
-was that it's better to use a nullable, a variable set to `None` in the absence of a value.
+was that it's better to use a nullable: a variable set to `None` in the absence of a value.
 
 My initial code for this was probably the worst Python I've ever written.
 ```python
@@ -208,6 +208,13 @@ def optional_pokemon_type(cls, s: str):
         return None
     return cls(s)
 ```
+
+With this, I could write:
+```python
+secondary_type=PokemonType.optional_pokemon_type(csv_row["secondary_type"])
+```
+
+Still pretty long, but much easier to understand.
 
 ## The grid of type defenses
 With `PokemonType` as an enum, I could use its members as the keys of a dictionary.
