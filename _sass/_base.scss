@@ -93,3 +93,8 @@ th, td {
   padding: 15px;
   text-align: left;
 }
+
+li:target {
+  background-color: #FCF1DD;
+  border-radius: 3px;
+}
