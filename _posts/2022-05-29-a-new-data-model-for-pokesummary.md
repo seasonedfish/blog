@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A New Data Model for Pokésummary"
-date:   2022-05-24
+date:   2022-05-29
 ---
 
 This past week, I made some technical changes to Pokésummary, my command-line Python program.
