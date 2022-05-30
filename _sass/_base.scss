@@ -94,6 +94,11 @@ th, td {
   text-align: left;
 }
 
+/*
+Footnotes
+ */
+
+// Highlight destination footnote
 li:target {
   background-color: #FCF1DD;
   border-radius: 3px;
