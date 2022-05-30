@@ -4,8 +4,9 @@ title:  "A New Data Model for Pokésummary"
 date:   2022-05-29
 ---
 
-This past week, I made some technical changes to Pokésummary, my command-line Python program.
-The biggest change was in how the program stores Pokémon data in memory.
+This past week, I made significant technical changes to [Pokésummary](https://github.com/tactlessfish/pokesummary),
+my command-line Python program.
+In this blog post, I'll recount the process of redesigning the data model.
 
 ## Some background
 Pokésummary version 1 consisted of three modules:
