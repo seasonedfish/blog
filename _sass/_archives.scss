@@ -1,0 +1,12 @@
+.posts-archive {
+  list-style: none;
+  padding-left: 0;
+
+  .archive-item {
+    color: $light-gray-color;
+  }
+
+  .archive-item-date {
+    padding-right: 10px;
+  }
+}
