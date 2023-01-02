@@ -2,10 +2,6 @@
   Social media icons
 */
 
-.sharing-icons a {
-  padding-right: 10px;
-}
-
 @mixin social-media-icon($color, $transition){
   -webkit-transition: $transition;
   -o-transition: $transition;
