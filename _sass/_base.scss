@@ -105,3 +105,10 @@ Footnotes
   background-color: #FCF1DD;
   border-radius: 3px;
 }
+
+// Add "hr"s to top and bottom
+// https://stackoverflow.com/a/13374813
+.footnotes {
+  border: 2px $extra-light-gray-color;
+  border-style: solid none;
+}
