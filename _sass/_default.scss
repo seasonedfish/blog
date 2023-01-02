@@ -25,24 +25,25 @@
 */
 
 .header {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   margin-bottom: 3rem;
-  font-family: $sans-serif-font-family;
-}
+  display: flow-root;
 
-.header a:hover {
-  color:black;
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color:black;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
 }
 
 .header-title a {
-  font-size: 2rem;
-  text-decoration: none;
   color: $body-color;
-}
-
-.header-subtitle {
-  color: $light-gray-color;
+  margin-bottom: 0;
 }
 
 /*
@@ -51,10 +52,11 @@
 
 .menu {
   padding-top: 0.5rem;
-  display: block;
 }
 
 .menu-content {
+  font-family: $sans-serif-font-family;
+  font-weight: bold;
   float: left;
 }
 
