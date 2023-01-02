@@ -10,7 +10,7 @@ menu:
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
-- {icon: 'github',     link: 'https://www.github.com/tactlessfish', title: 'GitHub'}
+- {icon: 'github',     link: 'https://www.github.com/pyjamafish', title: 'GitHub'}
 - {icon: 'envelope',   link: 'mailto:fisher521.fs@gmail.com',       title: 'Email'}
 - {icon: 'rss-square', link: '/feed.xml',                           title: 'RSS Feed'}
 # - {icon: 'rss-square', link: '/rss-feed.xml'}
