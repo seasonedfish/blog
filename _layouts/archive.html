@@ -6,13 +6,15 @@ layout: default
   {{ page.title }}
 </h1>
 
-<ol class="posts-archive">
+<table id="posts-archive">
   {% for post in site.posts %}
-    <li itemscope class="archive-item">
-      <span class="archive-item-date"> {{ post.date | date: "%Y-%m-%d" }} </span>
-      <a href="{{ site.github.url }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </li>
+    <tr class="archive-item">
+      <td class="archive-item-date"> {{ post.date | date: "%Y-%m-%d" }} </td>
+      <td>
+        <a href="{{ site.github.url }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </td>
+    </tr>
   {% endfor %}
-</ol>
+</table>
