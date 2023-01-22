@@ -1,15 +1,8 @@
 <footer class="footer no-print">
     {% for item in site.data.settings.social %}
-        {% assign first_char = item.link | slice: 0 %}
-        {% if first_char == '/' %}
-            <a href="{{ site.baseurl }}{{ item.link }}" title="{{ item.title }}">
-                {{ item.title }}
-            </a>
-        {% else %}
-            <a href="{{ item.link }}" target="_blank" title="{{ item.title }}">
-                {{ item.title }}
-            </a>
-        {% endif %}
+        <a href="{{ item.link }}" target="_blank" title="{{ item.title }}">
+            {{ item.title }}
+        </a>
     {% endfor %}
 
     <div class="footer-description"><a href="{{ site.github.url }}/">© 2022 {{ site.author }}.</a></div>
