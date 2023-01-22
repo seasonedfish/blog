@@ -66,20 +66,7 @@
   padding-right: 10px;
 }
 
-.social-icons {
-  float: right;
-}
-
-.social-icons a {
-  color: $light-gray-color;
-  font-size: 1rem;
-}
-
 @media (max-width: $elements-responsive-width) {
-  .social-icons {
-    float: left;
-    padding-top: 0;
-  }
   .menu-content {
     margin-bottom: 5px;
   }
