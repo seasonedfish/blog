@@ -109,18 +109,47 @@
 
 .footer {
   color: $light-gray-color;
+  margin: 2rem 0;
+  font-family: $sans-serif-font-family;
   text-align: center;
-  margin: 2rem;
 }
 
-.footer a {
-  color: $light-gray-color;
-  padding: 10px;
-  text-decoration: none;
+.social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
 }
 
-.footer a:hover {
-  color: $dark-gray-color;
+@mixin recolor($color: #000) {
+  // https://stackoverflow.com/a/68034320
+  $r: red($color) / 255;
+  $g: green($color) / 255;
+  $b: blue($color) / 255;
+  $a: alpha($color);
+
+  // color filter
+  $svg-filter-id: "recolor";
+  filter: url('data:image/svg+xml;utf8,\
+  <svg xmlns="http://www.w3.org/2000/svg">\
+    <filter id="#{$svg-filter-id}" color-interpolation-filters="sRGB">\
+      <feColorMatrix type="matrix" values="\
+       0 0 0 0 #{$r}\
+       0 0 0 0 #{$g}\
+       0 0 0 0 #{$b}\
+       0 0 0 #{$a} 0\
+      "/>\
+    </filter>\
+  </svg>\
+  ##{$svg-filter-id}');
+}
+
+.icon {
+  @include recolor($light-gray-color);
+}
+
+.icon:hover {
+  @include recolor($dark-gray-color);
 }
 
 .footer-description {
@@ -128,6 +157,15 @@
   margin-top:3px;
   margin-bottom: 1rem;
   color: $light-gray-color;
-  font-family: $sans-serif-font-family;
   font-size:0.8rem;
+
+  a {
+    color: $light-gray-color;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $dark-gray-color;
+  }
 }

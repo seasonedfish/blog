@@ -1,9 +1,11 @@
 <footer class="footer no-print">
-    {% for item in site.data.settings.social %}
-        <a href="{{ item.link }}" target="_blank" title="{{ item.title }}">
-            {{ item.title }}
-        </a>
-    {% endfor %}
+    <div class="social-links">
+        {% for item in site.data.settings.social %}
+            <a href="{{ item.link }}" target="_blank" title="{{ item.title }}">
+                <img class="icon" src="assets/svg/{{ item.svg }}" width="15" height="15" alt="{{ item.title }} icon">
+            </a>
+        {% endfor %}
+    </div>
 
     <div class="footer-description"><a href="{{ site.github.url }}/">© 2022 {{ site.author }}.</a></div>
 </footer>
