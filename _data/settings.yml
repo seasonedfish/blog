@@ -8,12 +8,10 @@ menu:
 - {name: 'Archives', url: 'archives.html'}
 - {name: 'Contact', url: 'contact.html'}
 
-# Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
-- {icon: 'github',     link: 'https://www.github.com/pyjamafish', title: 'GitHub'}
-- {icon: 'envelope',   link: 'mailto:fisher521.fs@gmail.com',       title: 'Email'}
-- {icon: 'rss-square', link: '/feed.xml',                           title: 'RSS Feed'}
-# - {icon: 'rss-square', link: '/rss-feed.xml'}
+- {title: 'GitHub', link: 'https://www.github.com/pyjamafish'}
+- {title: 'Email', link: 'mailto:fisher521.fs@gmail.com'}
+- {title: 'RSS Feed', link: '/feed.xml'}
 
 # Customize site text
 pagination:
