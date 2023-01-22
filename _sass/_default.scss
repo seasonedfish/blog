@@ -108,35 +108,15 @@
   justify-content: center;
 }
 
-@mixin recolor($color: #000) {
-  // https://stackoverflow.com/a/68034320
-  $r: red($color) / 255;
-  $g: green($color) / 255;
-  $b: blue($color) / 255;
-  $a: alpha($color);
-
-  // color filter
-  $svg-filter-id: "recolor";
-  filter: url('data:image/svg+xml;utf8,\
-  <svg xmlns="http://www.w3.org/2000/svg">\
-    <filter id="#{$svg-filter-id}" color-interpolation-filters="sRGB">\
-      <feColorMatrix type="matrix" values="\
-       0 0 0 0 #{$r}\
-       0 0 0 0 #{$g}\
-       0 0 0 0 #{$b}\
-       0 0 0 #{$a} 0\
-      "/>\
-    </filter>\
-  </svg>\
-  ##{$svg-filter-id}');
-}
-
 .icon {
-  @include recolor($light-gray-color);
+  // https://codepen.io/sosuke/pen/Pjoqqp
+  // applied to $light-gray-color
+  filter: invert(65%) sepia(0%) saturate(271%) hue-rotate(198deg) brightness(96%) contrast(81%);
 }
 
 .icon:hover {
-  @include recolor($dark-gray-color);
+  // applied to $dark-gray color
+  filter: invert(13%) sepia(82%) saturate(3%) hue-rotate(72deg) brightness(100%) contrast(85%);
 }
 
 .footer-description {
