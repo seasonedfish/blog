@@ -2,7 +2,7 @@
     <div class="social-links">
         {% for item in site.data.settings.social %}
             <a href="{{ item.link }}" target="_blank" title="{{ item.title }}">
-                <img class="icon" src="assets/svg/{{ item.svg }}" width="15" height="15" alt="{{ item.title }} icon">
+                <img class="icon" src="{{ site.github.url }}/assets/svg/{{ item.svg }}" width="15" height="15" alt="{{ item.title }} icon">
             </a>
         {% endfor %}
     </div>
