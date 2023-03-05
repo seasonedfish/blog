@@ -10,7 +10,7 @@ menu:
 
 social:
 - {title: 'GitHub', link: 'https://www.github.com/pyjamafish', svg: "github.svg"}
-- {title: 'Email', link: 'mailto:fisher521.fs@gmail.com', svg: "envelope-solid.svg"}
+- {title: 'Email', link: 'mailto:f.sun@wustl.edu', svg: "envelope-solid.svg"}
 - {title: 'RSS feed', link: '/feed.xml', svg: "square-rss-solid.svg"}
 
 # Customize site text
