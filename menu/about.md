@@ -4,11 +4,11 @@ title: About
 permalink: /about
 ---
 
-## About the Author
+## About the author
 Hey, I'm Fisher!
 I'm a CS student at Washington University in St. Louis.
 
-## About this Blog
+## About this blog
 In this blog,
 I plan to document projects I work on, issues I encounter, and things I learn.
 
