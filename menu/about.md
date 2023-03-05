@@ -20,6 +20,6 @@ At the moment, this website is built with [Jekyll](https://jekyllrb.com/).
 I have a love-hate relationship with Jekyll; maybe I'll move to a different SSG one of these days.
 
 The theme is my own unreleased theme, which I've named Linnaeus.
-It's a fork of [Lagrange](https://github.com/LeNPaul/Lagrange_) by Paul Le.
+It's a fork of [Lagrange](https://github.com/LeNPaul/Lagrange) by Paul Le.
 
 You can find the source code for this website in its GitHub repo, [pyjamafish/blog](https://github.com/pyjamafish/blog).
