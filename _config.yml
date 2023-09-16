@@ -22,6 +22,7 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
 title:		           "Fisher's Blog"
 author:              "Fisher Sun"
+url:                 "https://www.fishersun.com"
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
