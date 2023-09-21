@@ -9,7 +9,7 @@ menu:
 - {name: 'Contact', url: 'contact.html'}
 
 social:
-- {title: 'GitHub', link: 'https://www.github.com/pyjamafish', svg: "github.svg"}
+- {title: 'GitHub', link: 'https://www.github.com/seasonedfish', svg: "github.svg"}
 - {title: 'Email', link: 'mailto:f.sun@wustl.edu', svg: "envelope-solid.svg"}
 - {title: 'RSS feed', link: '/feed.xml', svg: "square-rss-solid.svg"}
 - {title: 'LinkedIn', link: 'https://www.linkedin.com/in/fisher-sun/', svg: "linkedin.svg"}

@@ -4,7 +4,7 @@ title:  "A New Data Model for Pokésummary"
 date:   2022-05-29
 ---
 
-This past week, I made significant technical changes to [Pokésummary](https://github.com/pyjamafish/pokesummary),
+This past week, I made significant technical changes to [Pokésummary](https://github.com/seasonedfish/pokesummary),
 my command-line Python program.
 In this blog post, I'll recount the process of redesigning the data model.
 

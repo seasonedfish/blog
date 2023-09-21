@@ -22,6 +22,6 @@ I have a love-hate relationship with Jekyll; maybe I'll move to a different SSG 
 The theme is my own unreleased theme, which I've named Linnaeus.
 It's a fork of [Lagrange](https://github.com/LeNPaul/Lagrange) by Paul Le.
 
-You can find the source code for this website in its GitHub repo, [pyjamafish/blog](https://github.com/pyjamafish/blog).
+You can find the source code for this website in its GitHub repo, [seasonedfish/blog](https://github.com/seasonedfish/blog).
 
 The icons at the bottom of the page are from [Font Awesome](https://fontawesome.com/) by Dave Gandy.
